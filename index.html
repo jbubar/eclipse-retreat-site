@@ -76,6 +76,31 @@
           </div>
           <p class="hero-scarcity">16 spots only</p>
 
+          <div class="countdown-card" aria-live="polite">
+            <p class="countdown-label">Countdown to maximum eclipse (Cambrils local time)</p>
+            <div class="countdown-grid" data-countdown role="timer">
+              <div class="time-block">
+                <span class="time-value" data-unit="days">--</span>
+                <span class="time-unit">Days</span>
+              </div>
+              <div class="time-block">
+                <span class="time-value" data-unit="hours">--</span>
+                <span class="time-unit">Hours</span>
+              </div>
+              <div class="time-block">
+                <span class="time-value" data-unit="minutes">--</span>
+                <span class="time-unit">Minutes</span>
+              </div>
+              <div class="time-block">
+                <span class="time-value" data-unit="seconds">--</span>
+                <span class="time-unit">Seconds</span>
+              </div>
+            </div>
+            <p class="countdown-meta">
+              Maximum eclipse: <strong>August 12, 2026 · 18:30:05 CEST</strong> (Europe/Madrid)
+            </p>
+          </div>
+
           <ul class="promise-list">
             <li>All-inclusive accommodations</li>
             <li>Curated cultural excursions</li>
@@ -347,6 +372,43 @@
         }
 
         heroVideo.addEventListener("error", markFallback, { once: true });
+      }
+
+      const targetEclipseMs = Date.parse("2026-08-12T18:30:05.600+02:00");
+      const countdownRoot = document.querySelector("[data-countdown]");
+
+      if (countdownRoot && Number.isFinite(targetEclipseMs)) {
+        const daysEl = countdownRoot.querySelector('[data-unit="days"]');
+        const hoursEl = countdownRoot.querySelector('[data-unit="hours"]');
+        const minutesEl = countdownRoot.querySelector('[data-unit="minutes"]');
+        const secondsEl = countdownRoot.querySelector('[data-unit="seconds"]');
+
+        const fmt = (v) => String(v).padStart(2, "0");
+
+        const tick = () => {
+          const now = Date.now();
+          let delta = Math.max(0, targetEclipseMs - now);
+
+          const days = Math.floor(delta / 86400000);
+          delta -= days * 86400000;
+          const hours = Math.floor(delta / 3600000);
+          delta -= hours * 3600000;
+          const minutes = Math.floor(delta / 60000);
+          delta -= minutes * 60000;
+          const seconds = Math.floor(delta / 1000);
+
+          if (daysEl) daysEl.textContent = String(days);
+          if (hoursEl) hoursEl.textContent = fmt(hours);
+          if (minutesEl) minutesEl.textContent = fmt(minutes);
+          if (secondsEl) secondsEl.textContent = fmt(seconds);
+
+          if (targetEclipseMs - now <= 0) {
+            countdownRoot.setAttribute("data-complete", "true");
+          }
+        };
+
+        tick();
+        window.setInterval(tick, 1000);
       }
     </script>
   </body>

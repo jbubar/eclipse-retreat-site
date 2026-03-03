@@ -124,6 +124,56 @@ img{max-width:100%;display:block;border-radius:14px}
   text-transform:uppercase;
   font-size:12px;
 }
+.countdown-card{
+  max-width:760px;
+  margin:0 0 20px;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(6,20,16,.64);
+  box-shadow: var(--shadow);
+}
+.countdown-label{
+  margin:0 0 10px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.countdown-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.time-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:10px 8px;
+  border-radius:12px;
+  background: rgba(11,35,30,.55);
+  border:1px solid rgba(202,162,93,.20);
+}
+.time-value{
+  font-family:"Cormorant Garamond",serif;
+  font-size:34px;
+  line-height:1;
+  color:var(--text);
+}
+.time-unit{
+  margin-top:4px;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.countdown-meta{
+  margin:10px 0 0;
+  font-size:12px;
+  color:var(--muted);
+}
+.countdown-meta strong{color:var(--text)}
 .promise-list{
   margin:0;
   padding:0;
@@ -305,6 +355,7 @@ details p{margin:10px 0 0;color:var(--muted);line-height:1.7}
   .title{font-size:clamp(48px,12vw,76px)}
   .subtitle{font-size:17px}
   .promise-list{grid-template-columns:1fr}
+  .countdown-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
