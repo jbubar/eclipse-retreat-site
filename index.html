@@ -27,50 +27,59 @@
         </a>
 
         <nav class="nav-links">
+          <a href="#apply">Apply</a>
           <a href="#experience">Experience</a>
           <a href="#location">Location</a>
           <a href="#included">Included</a>
           <a href="#about">About</a>
-          <a href="#pricing">Reserve</a>
+          <a href="#pricing">Pricing</a>
         </nav>
 
-        <a class="btn btn-primary" href="#pricing">Reserve</a>
+        <a class="btn btn-primary" href="#apply">Apply</a>
       </div>
     </header>
 
     <main id="top">
       <!-- HERO -->
       <section class="hero">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-bg" aria-hidden="true">
+          <video
+            class="hero-video"
+            data-hero-video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/hero-poster.svg"
+          >
+            <source src="assets/video/eclipse-loop.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
 
         <div class="container hero-content">
-          <p class="kicker">Cambrils, Spain • near Barcelona</p>
+          <p class="kicker">Cambrils, Spain · August 11-16</p>
           <h1 class="title">Solar Eclipse of the Heart</h1>
           <p class="subtitle">
-            A boutique, all-inclusive <strong>total solar eclipse</strong> retreat on the Mediterranean coast.
-            <span class="subline">Aug 11–16</span>
+            A boutique, all-inclusive <strong>total eclipse retreat</strong>.
+            <span class="subline">Witness the eclipse. Come home different.</span>
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="#pricing">Reserve your spot</a>
+            <a class="btn btn-primary" href="#apply">Apply now</a>
             <a class="btn btn-ghost" href="#experience">See the experience</a>
           </div>
+          <p class="hero-scarcity">16 spots only</p>
 
-          <div class="hero-badges">
-            <div class="badge">
-              <div class="badge-top">Small group</div>
-              <div class="badge-bottom">16 spots</div>
-            </div>
-            <div class="badge">
-              <div class="badge-top">All-inclusive</div>
-              <div class="badge-bottom">meals + stay</div>
-            </div>
-            <div class="badge">
-              <div class="badge-top">Eclipse viewing</div>
-              <div class="badge-bottom">guided</div>
-            </div>
-          </div>
+          <ul class="promise-list">
+            <li>All-inclusive accommodations</li>
+            <li>Curated cultural excursions</li>
+            <li>Eclipse viewing with guidance</li>
+            <li>Workshops &amp; creative sessions</li>
+            <li>Intimate group of 16</li>
+          </ul>
         </div>
       </section>
 
@@ -102,6 +111,44 @@
         </div>
       </section>
 
+      <!-- APPLY -->
+      <section id="apply" class="section apply-section">
+        <div class="container apply-grid">
+          <div>
+            <p class="kicker">Application first</p>
+            <h2>Apply for one of 16 places.</h2>
+            <p class="muted">
+              This retreat is intentionally curated. Share a few details and we will invite you to a 20-minute call.
+              If it is a fit, you will receive the deposit link to secure your spot.
+            </p>
+            <p class="muted">You can expect a reply from Josh + Harry within 48 hours.</p>
+          </div>
+
+          <div class="card apply-card">
+            <form class="apply-form" action="https://formspree.io/f/mvzbjvek" method="post">
+              <input type="hidden" name="_subject" value="New Solar Eclipse Retreat Application" />
+              <input type="hidden" name="_next" value="https://jbubar.github.io/eclipse-retreat-site/#apply" />
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true" />
+
+              <label for="app-name">Full name</label>
+              <input id="app-name" name="name" type="text" autocomplete="name" required />
+
+              <label for="app-email">Email</label>
+              <input id="app-email" name="email" type="email" autocomplete="email" required />
+
+              <label for="app-phone">Phone (optional)</label>
+              <input id="app-phone" name="phone" type="tel" autocomplete="tel" />
+
+              <label for="app-intent">What is calling you to this retreat?</label>
+              <textarea id="app-intent" name="intent" rows="4" required></textarea>
+
+              <button class="btn btn-primary" type="submit">Send application</button>
+              <p class="fine">Application submissions are sent securely through Formspree.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <!-- LOCATION -->
       <section id="location" class="section section-alt">
         <div class="container split">
@@ -122,9 +169,8 @@
           </div>
 
           <div class="media">
-            <!-- Replace these with your real images -->
-            <img src="assets/cambrils-1.jpg" alt="Cambrils coastline and Mediterranean water" />
-            <img src="assets/cambrils-2.jpg" alt="Old town street in Cambrils near Barcelona" />
+            <img src="assets/cambrils-spain-pics/beach1.jpg" alt="Cambrils coastline and Mediterranean water" />
+            <img src="assets/cambrils-spain-pics/food-Paella_RECIPE_021523_47427.jpg" alt="Seafood paella served in Cambrils, Spain" />
           </div>
         </div>
       </section>
@@ -157,9 +203,9 @@
       <!-- ABOUT -->
       <section id="about" class="section section-alt">
         <div class="container split">
-          <div class="media">
-            <!-- Replace with a photo of you + Harry -->
-            <img src="assets/hosts.jpg" alt="Josh and Harry, hosts of the retreat" />
+          <div class="media host-media">
+            <img class="host-photo" src="assets/harry&amp;josh/josh.jpeg" alt="Josh Bubar, co-host of the retreat" />
+            <img class="host-photo" src="assets/harry&amp;josh/harry.jpg" alt="Harry Bui, co-host of the retreat" />
           </div>
 
           <div>
@@ -181,35 +227,54 @@
           <div class="section-head">
             <h2>Reserve your spot</h2>
             <p class="muted">
-              Limited to 16 participants. Reserve with a deposit, or pay in full.
-              (You can switch this to “application first” if you want it more curated.)
+              Limited to 16 participants. Apply first, then secure your place with a deposit or pay in full.
             </p>
           </div>
 
-          <div class="grid-3 pricing">
+          <div class="pricing-grid">
             <div class="card price-card">
-              <h3>Deposit</h3>
-              <p class="price">$500</p>
-              <p class="muted">Holds your spot. Remaining balance due later.</p>
-              <a class="btn btn-primary" href="YOUR_PAYPAL_DEPOSIT_LINK" target="_blank" rel="noopener">Pay deposit</a>
-              <p class="fine">Replace with your PayPal/Stripe link.</p>
+              <h3>Shared (Solo adventurer, single bed)</h3>
+              <p class="price">$4,100</p>
+              <p class="muted"><strong>Best for:</strong> Solo travelers open to connection.</p>
+              <p class="muted">Stay in a beautifully curated shared room with three single beds.</p>
+              <div class="price-actions">
+                <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/86MANWBQZBXJQ" target="_blank" rel="noopener">Pay in full</a>
+                <a class="btn btn-ghost" href="https://www.paypal.com/ncp/payment/W8AHXLK7J5KEL" target="_blank" rel="noopener">Deposit $1,500</a>
+              </div>
             </div>
 
             <div class="card price-card featured">
               <div class="pill">Most popular</div>
-              <h3>Pay in full</h3>
-              <p class="price">$X,XXX</p>
-              <p class="muted">All-inclusive retreat package.</p>
-              <a class="btn btn-primary" href="YOUR_PAYPAL_FULLPAY_LINK" target="_blank" rel="noopener">Pay in full</a>
-              <p class="fine">Replace with your PayPal/Stripe link.</p>
+              <h3>Singles (Solo adventurer, double bed)</h3>
+              <p class="price">$5,100</p>
+              <p class="muted"><strong>Best for:</strong> Solo guests wanting privacy.</p>
+              <p class="muted">Enjoy your own private sanctuary with a comfortable double bed.</p>
+              <div class="price-actions">
+                <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/H4L4UDMR72SSU" target="_blank" rel="noopener">Pay in full</a>
+                <a class="btn btn-ghost" href="https://www.paypal.com/ncp/payment/Y6B7EPKPPUZJ4" target="_blank" rel="noopener">Deposit $1,500</a>
+              </div>
             </div>
 
             <div class="card price-card">
-              <h3>Payment plan</h3>
-              <p class="price">3 payments</p>
-              <p class="muted">Split over time (Stripe link recommended).</p>
-              <a class="btn btn-ghost" href="YOUR_PAYMENT_PLAN_LINK" target="_blank" rel="noopener">View plan</a>
-              <p class="fine">Or use an application + manual approval.</p>
+              <h3>Couples</h3>
+              <p class="price">$7,900</p>
+              <p class="muted"><strong>Best for:</strong> Partners attending together.</p>
+              <p class="muted">A cozy and intimate room with one double bed for two guests.</p>
+              <div class="price-actions">
+                <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/VFFRX44CK3YXY" target="_blank" rel="noopener">Pay in full</a>
+                <a class="btn btn-ghost" href="https://www.paypal.com/ncp/payment/4Y5AMXDHRGJAL" target="_blank" rel="noopener">Deposit $2,000</a>
+              </div>
+            </div>
+
+            <div class="card price-card">
+              <h3>Doubles + Single</h3>
+              <p class="price">$10,100</p>
+              <p class="muted"><strong>Best for:</strong> Families or close friends.</p>
+              <p class="muted">One double bed and one single bed with extra space to settle in.</p>
+              <div class="price-actions">
+                <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/3H3KN2XLBSJBY" target="_blank" rel="noopener">Pay in full</a>
+                <a class="btn btn-ghost" href="https://www.paypal.com/ncp/payment/SF6CSS336NETC" target="_blank" rel="noopener">Deposit $2,500</a>
+              </div>
             </div>
           </div>
 
@@ -258,6 +323,28 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      document.body.classList.add("is-loading");
+      window.requestAnimationFrame(() => {
+        document.body.classList.add("is-ready");
+      });
+
+      const hero = document.querySelector(".hero");
+      const heroVideo = document.querySelector("[data-hero-video]");
+
+      if (hero && heroVideo) {
+        const markReady = () => hero.classList.add("video-ready");
+        const markFallback = () => hero.classList.add("no-video");
+
+        heroVideo.addEventListener("canplay", markReady, { once: true });
+
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(markFallback);
+        }
+
+        heroVideo.addEventListener("error", markFallback, { once: true });
+      }
     </script>
   </body>
 </html>
