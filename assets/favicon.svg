@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Solar eclipse favicon">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#16322a"/>
+      <stop offset="100%" stop-color="#071a16"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="42%">
+      <stop offset="52%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="72%" stop-color="#caa25d" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#caa25d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="18" fill="url(#halo)"/>
+  <circle cx="32" cy="32" r="12.5" fill="#040707"/>
+  <circle cx="42" cy="20" r="1.4" fill="#f1e9da" opacity="0.9"/>
+  <circle cx="17" cy="24" r="1" fill="#f1e9da" opacity="0.65"/>
+  <circle cx="22" cy="44" r="0.9" fill="#f1e9da" opacity="0.55"/>
+</svg>

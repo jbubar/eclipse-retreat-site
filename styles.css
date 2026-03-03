@@ -215,8 +215,8 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation M
   gap:10px;
 }
 .host-photo{
-  width:min(100%, 320px);
-  max-height:300px;
+  width:min(100%, 280px);
+  max-height:260px;
   object-fit:cover;
   object-position:center;
 }
