@@ -42,6 +42,7 @@
           <a href="#apply">Apply</a>
           <a href="#experience">Experience</a>
           <a href="#location">Location</a>
+          <a href="#accommodations">Stay</a>
           <a href="#included">Included</a>
           <a href="#about">About</a>
           <a href="#pricing">Pricing</a>
@@ -208,6 +209,81 @@
           <div class="media">
             <img src="assets/cambrils-spain-pics/beach1.jpg" alt="Cambrils coastline and Mediterranean water" />
             <img src="assets/cambrils-spain-pics/food-Paella_RECIPE_021523_47427.jpg" alt="Seafood paella served in Cambrils, Spain" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ACCOMMODATIONS -->
+      <section id="accommodations" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>The villa you'll come home to.</h2>
+            <p class="muted">
+              Spacious rooms, a sunlit kitchen, shared gathering areas, and quiet corners to land after long beach days and eclipse nights.
+            </p>
+          </div>
+
+          <div class="accommodation-shell">
+            <div class="carousel" data-carousel>
+              <div class="carousel-stage">
+                <figure class="carousel-slide is-active" data-slide>
+                  <img src="assets/airbnb/living-room.jpg" alt="Airbnb living room with open seating and natural light" />
+                  <figcaption>Warm shared living room for conversations, music, and integration.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/pool.jpg" alt="Airbnb pool and outdoor lounge area" />
+                  <figcaption>Poolside space for slow mornings and golden-hour hangs.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/kitchen.avif" alt="Airbnb kitchen and dining area" />
+                  <figcaption>Big kitchen energy with shared meals and easy gathering flow.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/double-bed.avif" alt="Private room with a double bed" />
+                  <figcaption>Private double room for solo guests who want quiet and privacy.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/double-bed-2.avif" alt="Cozy bedroom with a double bed for two guests" />
+                  <figcaption>Cozy double room setup for couples attending together.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/3-single-beds.avif" alt="Shared room with three single beds" />
+                  <figcaption>Shared room with single beds for solo travelers open to connection.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/family-room.avif" alt="Family room with double and single bed layout" />
+                  <figcaption>Flexible family-style room for close friends or a small family pod.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/bathroom1.avif" alt="Airbnb bathroom with bright finishes" />
+                  <figcaption>Bright, clean bathroom details that keep the whole stay feeling easy.</figcaption>
+                </figure>
+                <figure class="carousel-slide" data-slide>
+                  <img src="assets/airbnb/cambrils.avif" alt="Outdoor view of the Cambrils property surroundings" />
+                  <figcaption>The surrounding Cambrils setting, close to coast, town, and warm evening air.</figcaption>
+                </figure>
+              </div>
+
+              <div class="carousel-controls">
+                <button class="carousel-btn" type="button" data-carousel-prev aria-label="Show previous accommodation photo">
+                  <span aria-hidden="true">&#8592;</span>
+                </button>
+                <div class="carousel-dots" role="tablist" aria-label="Accommodation photos">
+                  <button class="carousel-dot is-active" type="button" data-carousel-dot aria-label="Show slide 1" aria-current="true"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 2"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 3"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 4"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 5"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 6"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 7"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 8"></button>
+                  <button class="carousel-dot" type="button" data-carousel-dot aria-label="Show slide 9"></button>
+                </div>
+                <button class="carousel-btn" type="button" data-carousel-next aria-label="Show next accommodation photo">
+                  <span aria-hidden="true">&#8594;</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -418,6 +494,70 @@
 
         tick();
         window.setInterval(tick, 1000);
+      }
+
+      const carousel = document.querySelector("[data-carousel]");
+
+      if (carousel) {
+        const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
+        const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+        const prevBtn = carousel.querySelector("[data-carousel-prev]");
+        const nextBtn = carousel.querySelector("[data-carousel-next]");
+        const stage = carousel.querySelector(".carousel-stage");
+        let activeIndex = 0;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        const renderCarousel = (nextIndex) => {
+          activeIndex = (nextIndex + slides.length) % slides.length;
+
+          slides.forEach((slide, index) => {
+            const isActive = index === activeIndex;
+            slide.classList.toggle("is-active", isActive);
+          });
+
+          dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+            dot.classList.toggle("is-active", isActive);
+            dot.setAttribute("aria-current", isActive ? "true" : "false");
+          });
+        };
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => renderCarousel(activeIndex - 1));
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => renderCarousel(activeIndex + 1));
+        }
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => renderCarousel(index));
+        });
+
+        if (stage) {
+          stage.addEventListener("touchstart", (event) => {
+            const touch = event.changedTouches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+          }, { passive: true });
+
+          stage.addEventListener("touchend", (event) => {
+            const touch = event.changedTouches[0];
+            const deltaX = touch.clientX - touchStartX;
+            const deltaY = touch.clientY - touchStartY;
+
+            if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) {
+              return;
+            }
+
+            if (deltaX > 0) {
+              renderCarousel(activeIndex - 1);
+            } else {
+              renderCarousel(activeIndex + 1);
+            }
+          }, { passive: true });
+        }
       }
     </script>
   </body>

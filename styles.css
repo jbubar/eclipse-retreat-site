@@ -274,6 +274,103 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation M
 .list{padding-left:18px;color:var(--muted);line-height:1.8}
 .list strong{color:var(--text)}
 
+.accommodation-shell{
+  padding:28px 28px 28px;
+  border-radius:calc(var(--radius) + 8px);
+  background:
+    radial-gradient(700px 280px at 0% 0%, rgba(202,162,93,.12), transparent 60%),
+    linear-gradient(180deg, rgba(11,35,30,.82), rgba(11,35,30,.40));
+  border:1px solid rgba(202,162,93,.16);
+  box-shadow: var(--shadow-deep);
+}
+.carousel{
+  display:grid;
+  gap:18px;
+}
+.carousel-stage{
+  position:relative;
+  min-height:585px;
+  touch-action:pan-y;
+}
+.carousel-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:opacity .35s ease, transform .35s ease;
+}
+.carousel-slide.is-active{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.carousel-slide img{
+  width:100%;
+  height:540px;
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow: var(--shadow);
+}
+.carousel-slide figcaption{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+.carousel-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin-top:8px;
+}
+.carousel-btn{
+  appearance:none;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(6,20,16,.72);
+  color:var(--text);
+  border-radius:999px;
+  width:52px;
+  height:52px;
+  padding:0;
+  font:inherit;
+  flex:0 0 auto;
+  cursor:pointer;
+  transition:transform .25s ease, border-color .25s ease;
+}
+.carousel-btn span{
+  display:block;
+  font-size:24px;
+  line-height:1;
+}
+.carousel-btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(202,162,93,.35);
+}
+.carousel-dots{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  flex:1 1 auto;
+  min-width:0;
+}
+.carousel-dot{
+  width:11px;
+  height:11px;
+  border-radius:999px;
+  border:none;
+  background:rgba(255,255,255,.18);
+  cursor:pointer;
+  padding:0;
+  transition:transform .25s ease, background-color .25s ease;
+}
+.carousel-dot.is-active{
+  background:var(--gold);
+  transform:scale(1.15);
+}
+
 .checklist{display:flex;flex-direction:column;gap:10px}
 .check{
   padding:12px 14px;
@@ -361,6 +458,9 @@ details p{margin:10px 0 0;color:var(--muted);line-height:1.7}
   .pricing-grid{grid-template-columns:1fr}
   .split{grid-template-columns:1fr}
   .apply-grid{grid-template-columns:1fr}
+  .accommodation-shell{padding:18px 18px 24px}
+  .carousel-stage{min-height:476px}
+  .carousel-slide img{height:420px}
   h2{font-size:36px}
 }
 
@@ -370,6 +470,16 @@ details p{margin:10px 0 0;color:var(--muted);line-height:1.7}
   .cta-row .btn{width:100%}
   .subline{font-size:16px}
   .section{padding:70px 0}
+  .carousel-stage{min-height:368px}
+  .carousel-slide img{height:300px}
+  .carousel-controls{gap:12px}
+  .carousel-btn{
+    width:46px;
+    height:46px;
+  }
+  .carousel-btn span{font-size:21px}
+  .carousel-dots{gap:8px}
+  .carousel-slide figcaption{margin-top:14px}
 }
 
 @media (prefers-reduced-motion: reduce){
