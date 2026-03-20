@@ -429,6 +429,16 @@ details{
 }
 summary{cursor:pointer;font-weight:600}
 details p{margin:10px 0 0;color:var(--muted);line-height:1.7}
+details p a{
+  color:var(--gold);
+  font-weight:600;
+  text-decoration:underline;
+  text-decoration-thickness:1.5px;
+  text-underline-offset:3px;
+}
+details p a:hover{
+  color:var(--text);
+}
 
 .footer{
   padding:28px 0 42px;
