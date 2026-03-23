@@ -221,40 +221,6 @@ h2{
 .card h3{margin:0 0 8px;font-size:16px}
 .card p{margin:0;color:var(--muted);line-height:1.7}
 
-.apply-section{
-  background: linear-gradient(180deg, rgba(6,18,15,.96), rgba(8,20,16,.88));
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.apply-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:start}
-.apply-card{box-shadow:var(--shadow-deep)}
-.apply-form{display:flex;flex-direction:column;gap:10px}
-.apply-form label{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.01em}
-.apply-form input,
-.apply-form textarea{
-  width:100%;
-  background: rgba(6,20,16,.82);
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:12px;
-  padding:11px 12px;
-  font:inherit;
-}
-.apply-form input:focus,
-.apply-form textarea:focus{
-  outline:none;
-  border-color:rgba(202,162,93,.74);
-  box-shadow:0 0 0 3px rgba(202,162,93,.18);
-}
-.apply-form .btn{margin-top:6px;align-self:flex-start}
-.hp-field{
-  position:absolute !important;
-  left:-9999px !important;
-  width:1px;
-  height:1px;
-  opacity:0;
-  pointer-events:none;
-}
 .fine{margin:12px 0 0;color:rgba(203,191,174,.75);font-size:12px;line-height:1.5}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
 
@@ -467,7 +433,6 @@ details p a:hover{
   .grid-2{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
   .split{grid-template-columns:1fr}
-  .apply-grid{grid-template-columns:1fr}
   .accommodation-shell{padding:18px 18px 24px}
   .carousel-stage{min-height:476px}
   .carousel-slide img{height:420px}
