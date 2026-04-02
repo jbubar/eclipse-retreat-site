@@ -352,28 +352,167 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation M
   font-weight:700;
 }
 
-.pricing{align-items:stretch}
+.pricing-section{
+  background:
+    radial-gradient(800px 300px at 100% 0%, rgba(202,162,93,.10), transparent 60%),
+    linear-gradient(180deg, rgba(7,26,22,.20), rgba(7,26,22,.04));
+}
+.pricing-header{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:20px;
+  align-items:start;
+  margin-bottom:24px;
+}
+.pricing-head{margin-bottom:0}
+.pricing-aside{
+  background:
+    radial-gradient(520px 220px at 100% 0%, rgba(202,162,93,.12), transparent 62%),
+    linear-gradient(180deg, rgba(11,35,30,.85), rgba(11,35,30,.50));
+}
+.pricing-aside h3{
+  margin:0 0 14px;
+  font-size:22px;
+  font-family:"Cormorant Garamond",serif;
+}
+.booking-steps{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.booking-step{
+  display:grid;
+  grid-template-columns:32px 1fr;
+  gap:12px;
+  align-items:start;
+  padding:12px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.booking-step:first-child{border-top:none;padding-top:0}
+.booking-step span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  border-radius:999px;
+  background:rgba(202,162,93,.16);
+  border:1px solid rgba(202,162,93,.32);
+  color:var(--text);
+  font-size:13px;
+  font-weight:700;
+}
+.booking-step strong{
+  display:block;
+  margin:0 0 2px;
+  color:var(--text);
+}
+.booking-step p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+.pricing-policy{
+  margin:16px 0 0;
+  color:var(--muted);
+}
+.pricing-policy a{
+  color:var(--gold);
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 .pricing-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px;
   align-items:stretch;
 }
+.price-card{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.price-card-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.price-card h3{
+  margin:0;
+  font-size:24px;
+  font-family:"Cormorant Garamond",serif;
+}
+.room-meta{
+  margin:4px 0 0;
+  color:rgba(203,191,174,.82);
+  font-size:13px;
+  letter-spacing:.02em;
+}
+.save-pill{
+  white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(202,162,93,.12);
+  border:1px solid rgba(202,162,93,.24);
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+}
 .price-card .price{
   font-size:32px;
-  margin:10px 0 6px;
+  margin:4px 0 4px;
   font-family:"Cormorant Garamond",serif;
+  color:#D9B464;
+}
+.price-label{
+  margin:14px 0 0;
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.future-price{
+  margin:0 0 10px;
+  color:rgba(203,191,174,.82);
+  font-size:13px;
+}
+.future-price span{
+  text-decoration:line-through;
+  text-decoration-thickness:1.5px;
+  text-decoration-color:rgba(203,191,174,.72);
+}
+.room-copy{margin-top:8px !important}
+.deposit-note{
+  margin:14px 0 0;
+  padding:10px 12px;
+  border-radius:12px;
+  background:rgba(6,20,16,.82);
+  border:1px solid rgba(255,255,255,.08);
   color:var(--text);
+  font-size:13px;
 }
 .price-actions{
   display:flex;
-  flex-wrap:wrap;
+  flex-direction:column;
   gap:10px;
-  margin-top:14px;
+  margin-top:16px;
+}
+.price-actions .btn{
+  width:100%;
 }
 .price-card .muted strong{color:var(--text)}
 .price-card .fine{margin:12px 0 0;color:rgba(203,191,174,.75);font-size:12px}
-.price-card.featured{border-color:rgba(202,162,93,.38);transform: translateY(-4px)}
+.price-card.featured{
+  border-color:rgba(202,162,93,.38);
+  transform: translateY(-4px);
+  box-shadow:0 24px 70px rgba(0,0,0,.44), 0 0 0 1px rgba(202,162,93,.10);
+}
 .pill{
   display:inline-block;
   font-size:12px;
@@ -431,6 +570,7 @@ details p a:hover{
   .countdown-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
+  .pricing-header{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
   .split{grid-template-columns:1fr}
   .accommodation-shell{padding:18px 18px 24px}
@@ -445,6 +585,8 @@ details p a:hover{
   .cta-row .btn{width:100%}
   .subline{font-size:16px}
   .section{padding:70px 0}
+  .price-card-top{flex-direction:column}
+  .save-pill{align-self:flex-start}
   .carousel-stage{min-height:368px}
   .carousel-slide img{height:300px}
   .carousel-controls{gap:12px}
